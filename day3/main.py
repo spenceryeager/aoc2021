@@ -7,23 +7,40 @@ def fileload(input):
     return vals
 
 
+def eps(gamma):
+    epsilon = ''
+    for char in gamma:
+        if char == '1':
+            epsilon = epsilon + '0'
+        else:
+            epsilon = epsilon + '1'
+    return epsilon
+
+
 def part_one(vals):
-    gamma = ''
-    length = len(vals[0])
-    
+    gamma = '' # initializing gamma val as blank string for concatenation
+    length = len(vals[0]) # setting comparison length
 
     for char_index in range(length):
         t_count = 0
         f_count = 0
         for binary in vals:
             if len(binary) == length:
-                print(char_index)
+                if binary[char_index] == '1':
+                    t_count += 1
+                else:
+                    f_count += 1
             else:
                 print('Length not matching for all inputs')
 
-    # for binary in vals:
+        if t_count > f_count:
+            gamma = gamma + '1'
+        else:
+            gamma = gamma + '0'
+    
+    epsilon = eps(gamma)
+    print(int(gamma, 2) * int(epsilon, 2))
 
-        
 
 def main():
     vals = fileload('input')
