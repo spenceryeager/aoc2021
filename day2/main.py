@@ -1,6 +1,6 @@
 def main():
     # file opening
-    file = open("day2/input", "r")
+    file = open("input", "r")
     vals = []
     for value in file:
         vals.append(value.strip("\n"))

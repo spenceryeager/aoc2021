@@ -3,7 +3,7 @@ import numpy as np
 
 def main():
     # input file
-    file = open('day1/input.csv', 'r')
+    file = open('input.csv', 'r')
     val_list = []
     for i in file:
         val_list.append(int(i))
